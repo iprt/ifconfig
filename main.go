@@ -18,7 +18,7 @@ func main() {
 		port = portEnv
 	}
 
-	host := web.AppConfig.DefaultString("httpaddr", "127.0.0.1")
+	host := web.AppConfig.DefaultString("httpaddr", "0.0.0.0")
 	if hostEnv := os.Getenv(HostVar); hostEnv != "" {
 		host = hostEnv
 	}
