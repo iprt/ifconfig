@@ -9,6 +9,8 @@ WORKDIR /opt/app
 
 ADD ifconfig ifconfig
 ADD conf/ conf/
+ADD static/ static/
+ADD views/ views/
 
 EXPOSE 8080
 
