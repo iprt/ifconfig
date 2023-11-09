@@ -11,5 +11,3 @@ services:
     volumes:
       - ./GeoLite2-City.mmdb:/opt/app/GeoLite2-City.mmdb
       - ./ipipfree.ipdb:/opt/app/ipipfree.ipdb
-      - ./ip2region.db:/opt/app/ip2region.db
-      - ./qqwry.dat:/opt/app/qqwry.dat
