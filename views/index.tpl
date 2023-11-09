@@ -83,6 +83,8 @@
         #info_table td {
             border: solid 1px #888;
             padding: 0px 10px;
+            word-wrap: break-word;
+            word-break: break-all;
         }
 
         .info_table_label {
@@ -131,10 +133,12 @@
             padding-top: 3px;
             padding-bottom: 3px;
             overflow: hidden;
+            word-wrap: break-word;
+            word-break: break-all;
         }
 
         .cli_command {
-            width: 190px;
+            width: 220px;
             padding-left: 10px;
         }
 
