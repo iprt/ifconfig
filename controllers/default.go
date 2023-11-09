@@ -422,7 +422,7 @@ func (this *MainController) GetGeo() {
 	if strings.Contains(this.Ctx.Request.UserAgent(), "curl") {
 		this.TplName = "geo.tpl"
 	} else {
-		this.Data["BaseUrl"] = web.AppConfig.DefaultString("baseurl", "ifconfig.ismisv.com")
+		this.Data["BaseUrl"] = web.AppConfig.DefaultString("baseurl", "ipcrystal.com")
 		this.Data["Email"] = web.AppConfig.DefaultString("email", "")
 		this.Data["UserAgent"] = this.Ctx.Request.UserAgent()
 		names, err := net.LookupAddr(ip)
@@ -479,7 +479,8 @@ func (this *MainController) Get() {
 	if strings.Contains(this.Ctx.Request.UserAgent(), "curl") {
 		this.TplName = "iponly.tpl"
 	} else {
-		this.Data["BaseUrl"] = web.AppConfig.DefaultString("baseurl", "ifconfig.ismisv.com")
+		this.Data["BaseUrl"] = web.AppConfig.DefaultString("baseurl", "ipcrystal.com")
+		this.Data["Record"] = web.AppConfig.DefaultString("record", "")
 		this.Data["Email"] = web.AppConfig.DefaultString("email", "")
 		this.Data["UserAgent"] = this.Ctx.Request.UserAgent()
 
