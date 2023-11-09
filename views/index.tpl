@@ -20,7 +20,7 @@
             padding: 0;
             font-style: normal;
             font-weight: normal;
-            font-family: Arial, sans-serif;
+            font-family: Consolas, Arial, sans-serif;
             font-size: 13px;
             color: #333;
         }
@@ -30,7 +30,7 @@
 
         #container {
             background: white;
-            width: 750px;
+            width: 822px;
             margin: 10px auto;
             margin-bottom: 10px;
             border: solid 1px #888;
@@ -72,7 +72,7 @@
             border-collapse: collapse;
             margin: 0 auto;
             line-height: 20px;
-            width: 728px;
+            width: 800px;
             table-layout: fixed;
         }
 
@@ -116,7 +116,7 @@
         #cli_table {
             border: solid 1px #888;
             border-collapse: collapse;
-            width: 728px;
+            width: 800px;
             margin: 0 auto;
             line-height: 20px;
             table-layout: fixed;
@@ -161,29 +161,7 @@
             padding: 5px;
             height: 50px;
         }
-
-        #plungins {
-            height: 20px;
-            float: right;
-        }
-
-        .plungin {
-            float: right;
-        }
-
-        #button_twitter {
-            width: 100px;
-        }
-
-        #button_plusone {
-            width: 70px;
-        }
-
-        #button_facebook {
-            width: 100px;
-        }
     </style>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
 <div id="container" class="clearfix">
@@ -202,8 +180,8 @@
             </tr>
         </table>
     </div>
-    <div id="ads">
-    </div>
+
+
     <div id="info_area">
         <h2>Your Connection</h2>
         <table id="info_table" summary="info">
@@ -283,8 +261,10 @@
             </tr>
         </table>
     </div>
+
     <div id="middle">
     </div>
+
     <div id="cli_wrap">
         <h2>Command Line Interface</h2>
         <table id="cli_table" summary="cli">
@@ -376,10 +356,20 @@
             <tr>
                 <td class="cli_command">$ curl {{.BaseUrl}}/all.json</td>
                 <td class="cli_arrow">&rArr;</td>
-                <td>{"connection":"{{.Connection}}","ip_addr":"{{.IP}}","lang":"{{.Lang}}","remote_host":"{{.Host}}
-                    ","user_agent":"{{.UserAgent}}","charset":"{{.Charset}}","port":"{{.Port}}","via":"{{.Via}}
-                    ","forwarded":"{{.Forwarded}}","mime":"{{.Mime}}","keep_alive":"{{.Keepalive}}
-                    ","encoding":"{{.Encoding}}"}
+                <td>{<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"connection":"{{.Connection}}",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"ip_addr":"{{.IP}}",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"lang":"{{.Lang}}",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"remote_host":"{{.Host}}",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"user_agent":"{{.UserAgent}}",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"charset":"{{.Charset}}",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"port":"{{.Port}}",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"via":"{{.Via}}","<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;forwarded":"{{.Forwarded}}",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"mime":"{{.Mime}}",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"keep_alive":"{{.Keepalive}}",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"encoding":"{{.Encoding}}"<br/>
+                    }
                 </td>
             </tr>
         </table>
