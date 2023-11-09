@@ -13,3 +13,15 @@ ipipfree.ipdb
 ```text
 https://www.ipip.net/product/ip.html
 ```
+
+qqwry.dat
+
+```text
+https://github.com/FW27623/qqwry
+```
+
+ip2region.db
+
+```text
+https://github.com/lionsoul2014/ip2region
+```
