@@ -287,7 +287,13 @@
             <tr>
                 <td class="cli_command">$ curl {{.BaseUrl}}/geo</td>
                 <td class="cli_arrow">&rArr;</td>
-                <td>{{.IPIP}}</td>
+                <td>
+                    {{.IPIP}}<br/>
+                    QQWry: {{.QQWry}}<br/>
+                    Geoip2: {{.Geoip2}}<br/>
+                    IPIP.net: {{.IPIP}}<br/>
+                    IP2Region: {{.IP2Region}}
+                </td>
             </tr>
 
             <tr>
