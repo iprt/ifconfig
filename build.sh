@@ -22,11 +22,12 @@ OUT_FILE=ifconfig
 echo "build ifconfig in docker container $GO_IMAGE"
 docker run --rm -v "$PWD":/usr/src/myapp \
 -w /usr/src/myapp \
+-e CGO_ENABLED=0 \
 -e GOPROXY=https://goproxy.cn,direct \
 -e GOPATH=/opt/go \
 -v "$GO_IMAGE_CACHE":/opt/go \
 $GO_IMAGE \
-CGO_ENABLED=0 go build -v -o $OUT_FILE
+go build -v -o $OUT_FILE
 
 if [ -f "$OUT_FILE" ]; then
   echo  "build $OUT_FILE success"
