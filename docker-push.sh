@@ -5,7 +5,8 @@ IMAGE=$2
 VERSION=$3
 
 if [ -z "$REGISTRY" ]; then
-    echo "registry is empty"
+    echo "registry is empty then exit"
+    exit
 fi
 
 if [ -z "$IMAGE" ]; then
