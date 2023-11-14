@@ -1,4 +1,4 @@
-FROM debian:12
+FROM debian:12-alpine
 
 MAINTAINER "mimotronik@gmail.com"
 
@@ -6,8 +6,6 @@ LABEL email="mimotronik@gamil.com" \
       author="zhuzhenjie"
 
 WORKDIR /opt/app
-
-RUN echo $(date) random
 
 ADD ifconfig ifconfig
 ADD conf/ conf/
