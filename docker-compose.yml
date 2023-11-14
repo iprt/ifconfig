@@ -3,6 +3,7 @@ version: "3"
 services:
   ifconfig:
     image: "iproute/ifconfig:latest"
+    container_name: ifconfig
     restart: always
     ports:
       - "8080:8080"
