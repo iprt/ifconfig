@@ -1,10 +1,9 @@
 package main
 
 import (
-	"os"
-
 	"github.com/beego/beego/v2/server/web"
-	_ "github.com/missdeer/ifconfig/routers"
+	_ "github.com/iprt/ifconfig/routers"
+	"os"
 )
 
 const (
