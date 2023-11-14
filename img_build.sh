@@ -9,6 +9,7 @@ SHELL_FOLDER=$(
 # shellcheck disable=SC2164
 cd "$SHELL_FOLDER"
 
+# re tag
 CON=$(docker image ls iproute/ifconfig:latest | wc -l)
 
 if [ "$CON" -eq 2 ]; then
