@@ -277,51 +277,67 @@
                 <td class="cli_arrow">&rArr;</td>
                 <td>{{.IP}}</td>
             </tr>
+
             <tr>
                 <td class="cli_command">$ curl {{.BaseUrl}}/ip</td>
                 <td class="cli_arrow">&rArr;</td>
                 <td>{{.IP}}</td>
             </tr>
+
+            <tr>
+                <td class="cli_command">$ curl {{.BaseUrl}}/geo</td>
+                <td class="cli_arrow">&rArr;</td>
+                <td>{{.IPIP}}</td>
+            </tr>
+
             <tr>
                 <td class="cli_command">$ curl {{.BaseUrl}}/host</td>
                 <td class="cli_arrow">&rArr;</td>
                 <td>{{.Host}}</td>
             </tr>
+
             <tr>
                 <td class="cli_command">$ curl {{.BaseUrl}}/ua</td>
                 <td class="cli_arrow">&rArr;</td>
                 <td>{{.UserAgent}}</td>
             </tr>
+
             <tr>
                 <td class="cli_command">$ curl {{.BaseUrl}}/port</td>
                 <td class="cli_arrow">&rArr;</td>
                 <td>{{.Port}}</td>
             </tr>
+
             <tr>
                 <td class="cli_command">$ curl {{.BaseUrl}}/lang</td>
                 <td class="cli_arrow">&rArr;</td>
                 <td>{{.Lang}}</td>
             </tr>
+
             <tr>
                 <td class="cli_command">$ curl {{.BaseUrl}}/keepalive</td>
                 <td class="cli_arrow">&rArr;</td>
                 <td>{{.Keepalive}}</td>
             </tr>
+
             <tr>
                 <td class="cli_command">$ curl {{.BaseUrl}}/connection</td>
                 <td class="cli_arrow">&rArr;</td>
                 <td>{{.Connection}}</td>
             </tr>
+
             <tr>
                 <td class="cli_command">$ curl {{.BaseUrl}}/encoding</td>
                 <td class="cli_arrow">&rArr;</td>
                 <td>{{.Encoding}}</td>
             </tr>
+
             <tr>
                 <td class="cli_command">$ curl {{.BaseUrl}}/mime</td>
                 <td class="cli_arrow">&rArr;</td>
                 <td>{{.Mime}}</td>
             </tr>
+
             <tr>
                 <td class="cli_command">$ curl {{.BaseUrl}}/charset</td>
                 <td class="cli_arrow">&rArr;</td>
