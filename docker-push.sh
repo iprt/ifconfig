@@ -23,7 +23,7 @@ CON=$(docker image ls $IMAGE:$VERSION | wc -l)
 
 if [ "$CON" -eq 2 ]; then
   echo tag new version
-  docker tag $IMAGE:$VERSION "$REGISTRY"/$IMAGE:$VERSION
+  docker tag $IMAGE:$VERSION "$REGISTRY/$IMAGE:$VERSION"
   echo "docker push $REGISTRY/$IMAGE:$VERSION"
 
   docker push "$REGISTRY/$IMAGE:$VERSION"
