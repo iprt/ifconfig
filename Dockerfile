@@ -7,6 +7,8 @@ LABEL email="mimotronik@gamil.com" \
 
 WORKDIR /opt/app
 
+RUN echo $(date) random
+
 ADD ifconfig ifconfig
 ADD conf/ conf/
 ADD static/ static/
