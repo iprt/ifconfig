@@ -1,4 +1,4 @@
-FROM debian:12-alpine
+FROM debian:12-slim
 
 MAINTAINER "mimotronik@gmail.com"
 
