@@ -1,6 +1,40 @@
 # ifconfig
 
-## 下载
+## 镜像相关
+
+### 创建本地镜像
+
+```shell
+bash image_build.sh [IMAGE] [VERSION]
+```
+
+- IMAGE：可选，默认镜像的名称 `iproute/ifconfig`
+- VERSION: 可选, 默认镜像版本
+
+### 推送镜像
+
+```shell
+bash image_push.sh <REGISTRY> [IMAGE] [VERSION]
+```
+
+- REGISTRY: 必选，镜像仓库，一般是私仓
+- IMAGE：可选，默认镜像的名称 `iproute/ifconfig`
+- VERSION: 可选, 默认镜像版本
+
+### 删除本地镜像
+
+```shell
+# 保留latest,删除其他所有
+bash image_remove.sh
+
+# 删除所有版本
+bash image_remove.sh all
+
+# 删除<none>的镜像版本
+bash image_remove.sh none
+```
+
+## 需要下载的ip数据库
 
 GeoLite2-City.mmdb
 

@@ -16,4 +16,6 @@ function rmi() {
   fi
 }
 
-rmi iproute/ifconfig
+IMAGE=iproute/ifconfig
+
+rmi $IMAGE "$1"

@@ -38,13 +38,26 @@ fi
 
 echo "build ifconfig end"
 
+IMAGE=$1
+VERSION=$2
+
+if [ -z "$IMAGE" ]; then
+    echo "default image name is: iproute/ifconfig"
+    IMAGE=iproute/ifconfig
+fi
+
+if [ -z "$VERSION" ]; then
+    echo "default image version is: latest"
+    VERSION=latest
+fi
+
 # re tag
-CON=$(docker image ls iproute/ifconfig:latest | wc -l)
+CON=$(docker image ls $IMAGE:$VERSION | wc -l)
 
 if [ "$CON" -eq 2 ]; then
   echo tag new version
   TIMESTAMP_VERSION=$(date '+%Y-%m-%d_%H-%M-%S')
-  docker tag iproute/ifconfig:latest iproute/ifconfig:"$TIMESTAMP_VERSION"
+  docker tag $IMAGE:$VERSION $IMAGE:$VERSION:"$TIMESTAMP_VERSION"
 fi
 
 docker build -f Dockerfile -t iproute/ifconfig .

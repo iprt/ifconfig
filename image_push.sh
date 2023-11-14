@@ -10,12 +10,12 @@ if [ -z "$REGISTRY" ]; then
 fi
 
 if [ -z "$IMAGE" ]; then
-    echo "default image is iproute/ifconfig"
+    echo "default image name is: iproute/ifconfig"
     IMAGE=iproute/ifconfig
 fi
 
 if [ -z "$VERSION" ]; then
-    echo "default version latest"
+    echo "default image version is: latest"
     VERSION=latest
 fi
 
