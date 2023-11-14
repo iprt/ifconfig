@@ -288,7 +288,7 @@
                 <td class="cli_command">$ curl {{.BaseUrl}}/geo</td>
                 <td class="cli_arrow">&rArr;</td>
                 <td>
-                    {{.IPIP}}<br/>
+                    {{.IP}}<br/>
                     QQWry: {{.QQWry}}<br/>
                     Geoip2: {{.Geoip2}}<br/>
                     IPIP.net: {{.IPIP}}<br/>
