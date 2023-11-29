@@ -42,6 +42,8 @@ bash image_remove.sh none
 
 GeoLite2-City.mmdb
 
+https://github.com/wp-statistics/GeoLite2-City
+
 ```text
 https://cdn.jsdelivr.net/npm/geolite2-city@1.0.0/GeoLite2-City.mmdb.gz
 ```
@@ -62,4 +64,8 @@ ip2region.db
 
 ```text
 https://github.com/lionsoul2014/ip2region
+```
+
+```text
+https://gitee.com/lionsoul/ip2region
 ```
