@@ -7,10 +7,11 @@ services:
     restart: always
     ports:
       - "8080:8080"
+    # network_mode: host
     environment:
       TZ: Asia/Shanghai
     volumes:
-      - ./conf:/opt/app/conf
+      #- ./conf:/opt/app/conf
       - ./GeoLite2-City.mmdb:/opt/app/GeoLite2-City.mmdb
       - ./ipipfree.ipdb:/opt/app/ipipfree.ipdb
       - ./ip2region.db:/opt/app/ip2region.db
