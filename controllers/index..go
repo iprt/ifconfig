@@ -38,9 +38,9 @@ func (mainController *MainController) Get() {
 		mainController.Data["IPIP"], _ = mainController.QueryIPIPFree(ip)
 		mainController.Data["QQWry"], _ = mainController.QueryQQWry(ip)
 		mainController.Data["IP2Region"], _ = mainController.QueryIP2Region(ip)
-		remote_addr := []byte(mainController.Ctx.Request.RemoteAddr)
-		pos := bytes.IndexByte(remote_addr, ':')
-		mainController.Data["Port"] = string(remote_addr[pos+1:])
+		remoteAddr := []byte(mainController.Ctx.Request.RemoteAddr)
+		pos := bytes.IndexByte(remoteAddr, ':')
+		mainController.Data["Port"] = string(remoteAddr[pos+1:])
 		mainController.Data["Method"] = mainController.Ctx.Request.Method
 		if len(mainController.Ctx.Request.Header["Accept-Encoding"]) > 0 {
 			mainController.Data["Encoding"] = mainController.Ctx.Request.Header["Accept-Encoding"][0]
@@ -102,9 +102,9 @@ func (mainController *MainController) GetGeo() {
 			}
 			mainController.Data["Host"] = value
 		}
-		remote_addr := []byte(mainController.Ctx.Request.RemoteAddr)
-		pos := bytes.IndexByte(remote_addr, ':')
-		mainController.Data["Port"] = string(remote_addr[pos+1:])
+		remoteAddr := []byte(mainController.Ctx.Request.RemoteAddr)
+		pos := bytes.IndexByte(remoteAddr, ':')
+		mainController.Data["Port"] = string(remoteAddr[pos+1:])
 		mainController.Data["Method"] = mainController.Ctx.Request.Method
 		if len(mainController.Ctx.Request.Header["Accept-Encoding"]) > 0 {
 			mainController.Data["Encoding"] = mainController.Ctx.Request.Header["Accept-Encoding"][0]

@@ -31,9 +31,9 @@ func (mainController *MainController) GetAllXML() {
 	thisData.QQWry, _ = mainController.QueryQQWry(ip)
 	thisData.IP2Region, _ = mainController.QueryIP2Region(ip)
 	log.Println(thisData.IP2Region)
-	remote_addr := []byte(mainController.Ctx.Request.RemoteAddr)
-	pos := bytes.IndexByte(remote_addr, ':')
-	thisData.Port = string(remote_addr[pos+1:])
+	remoteAddr := []byte(mainController.Ctx.Request.RemoteAddr)
+	pos := bytes.IndexByte(remoteAddr, ':')
+	thisData.Port = string(remoteAddr[pos+1:])
 	thisData.Method = mainController.Ctx.Request.Method
 	if len(mainController.Ctx.Request.Header["Accept-Encoding"]) > 0 {
 		thisData.Encoding = mainController.Ctx.Request.Header["Accept-Encoding"][0]
@@ -62,5 +62,8 @@ func (mainController *MainController) GetAllXML() {
 	thisData.Referer = mainController.Ctx.Input.Refer()
 
 	mainController.Data["xml"] = thisData
-	mainController.ServeXML()
+	serverArr := mainController.ServeXML()
+	if serverArr != nil {
+		return
+	}
 }

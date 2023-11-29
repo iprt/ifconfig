@@ -46,9 +46,9 @@ func (mainController *MainController) GetIP() {
 }
 
 func (mainController *MainController) GetPort() {
-	remote_addr := []byte(mainController.Ctx.Request.RemoteAddr)
-	pos := bytes.IndexByte(remote_addr, ':')
-	mainController.Data["Value"] = string(remote_addr[pos+1:])
+	remoteAddr := []byte(mainController.Ctx.Request.RemoteAddr)
+	pos := bytes.IndexByte(remoteAddr, ':')
+	mainController.Data["Value"] = string(remoteAddr[pos+1:])
 	mainController.TplName = "value.tpl"
 }
 
