@@ -419,7 +419,7 @@
     </div>
     <div id="bottom">
     </div>
-    <div id="footer">&copy; 2014 - 2023 <a href="https://{{.BaseUrl}}">https://{{.BaseUrl}}</a> <a
+    <div id="footer">&copy; {{.CopyrightBegin}} - {{.CopyrightEnd}} <a href="https://{{.BaseUrl}}">https://{{.BaseUrl}}</a> <a
                 href="https://beian.miit.gov.cn/" target="_blank">{{ .Record }}</a></div>
 </div>
 </body>

@@ -6,7 +6,9 @@ import (
 	"github.com/beego/beego/v2/server/web"
 	"net"
 	"os"
+	"strconv"
 	"strings"
+	"time"
 )
 
 func (mainController *MainController) Get() {
@@ -23,6 +25,8 @@ func (mainController *MainController) Get() {
 		mainController.Data["Record"] = web.AppConfig.DefaultString("record", "")
 		mainController.Data["Email"] = web.AppConfig.DefaultString("email", "")
 		mainController.Data["UserAgent"] = mainController.Ctx.Request.UserAgent()
+		mainController.Data["CopyrightBegin"] = "2012"
+		mainController.Data["CopyrightEnd"] = strconv.Itoa(time.Now().Year())
 
 		names, err := net.LookupAddr(ip)
 		if err != nil || len(names) == 0 {
@@ -92,6 +96,10 @@ func (mainController *MainController) GetGeo() {
 		mainController.Data["BaseUrl"] = web.AppConfig.DefaultString("baseurl", "ipcrystal.com")
 		mainController.Data["Email"] = web.AppConfig.DefaultString("email", "")
 		mainController.Data["UserAgent"] = mainController.Ctx.Request.UserAgent()
+
+		mainController.Data["CopyrightBegin"] = "2012"
+		mainController.Data["CopyrightEnd"] = strconv.Itoa(time.Now().Year())
+
 		names, err := net.LookupAddr(ip)
 		if err != nil || len(names) == 0 {
 			mainController.Data["Host"] = ""
