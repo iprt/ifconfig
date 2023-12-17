@@ -1,12 +1,12 @@
 # ifconfig
 
-## 参考网站
+## reference
 
 https://ipcrystal.com
 
-## 镜像相关
+## image
 
-### 创建本地镜像
+### build image
 
 ```shell
 bash image_build.sh [IMAGE] [VERSION]
@@ -15,7 +15,7 @@ bash image_build.sh [IMAGE] [VERSION]
 - IMAGE：可选，默认镜像的名称 `iproute/ifconfig`
 - VERSION: 可选, 默认镜像版本
 
-### 推送镜像
+### push image
 
 ```shell
 bash image_push.sh <REGISTRY> [IMAGE] [VERSION]
@@ -23,9 +23,9 @@ bash image_push.sh <REGISTRY> [IMAGE] [VERSION]
 
 - REGISTRY: 必选，镜像仓库，一般是私仓
 - IMAGE：可选，默认镜像的名称 `iproute/ifconfig`
-- VERSION: 可选, 默认镜像版本
+- VERSION: 可选, 默认镜像版本 `latest`
 
-### 删除本地镜像
+### delete image
 
 ```shell
 # 保留latest,删除其他所有
@@ -38,7 +38,7 @@ bash image_remove.sh all
 bash image_remove.sh none
 ```
 
-## 需要下载的ip数据库
+## ip database
 
 GeoLite2-City.mmdb
 
