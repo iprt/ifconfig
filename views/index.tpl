@@ -20,7 +20,7 @@
             padding: 0;
             font-style: normal;
             font-weight: normal;
-            font-family: Consolas, Arial, sans-serif;
+            font-family: "JetBrains Mono", Consolas, Arial, sans-serif;
             font-size: 13px;
             color: #333;
         }
@@ -32,7 +32,7 @@
             background: white;
             width: 822px;
             margin: 10px auto;
-            margin-bottom: 10px;
+            /*margin-bottom: 10px;*/
             border: solid 1px #888;
         }
 
@@ -51,16 +51,6 @@
             letter-spacing: 1px;
             text-decoration: none;
             color: #555;
-        }
-
-        #ads {
-            height: 20px;
-            margin-bottom: 15px;
-            text-align: right;
-            background: #777;
-            padding-top: 4px;
-            border-left: solid 1px #888;
-            border-right: solid 1px #888;
         }
 
         #info_area {
@@ -82,7 +72,7 @@
 
         #info_table td {
             border: solid 1px #888;
-            padding: 0px 10px;
+            padding: 0 10px;
             word-wrap: break-word;
             word-break: break-all;
         }
@@ -419,7 +409,8 @@
     </div>
     <div id="bottom">
     </div>
-    <div id="footer">&copy; {{.CopyrightBegin}} - {{.CopyrightEnd}} <a href="https://{{.BaseUrl}}">https://{{.BaseUrl}}</a> <a
+    <div id="footer">&copy; {{.CopyrightBegin}} - {{.CopyrightEnd}} <a
+                href="https://{{.BaseUrl}}">https://{{.BaseUrl}}</a> <a
                 href="https://beian.miit.gov.cn/" target="_blank">{{ .Record }}</a></div>
 </div>
 </body>

@@ -21,7 +21,8 @@ func (mainController *MainController) Get() {
 	if strings.Contains(mainController.Ctx.Request.UserAgent(), "curl") {
 		mainController.TplName = "iponly.tpl"
 	} else {
-		mainController.Data["BaseUrl"] = web.AppConfig.DefaultString("baseurl", "ipcrystal.com")
+		//mainController.Data["BaseUrl"] = web.AppConfig.DefaultString("baseurl", "ipcrystal.com")
+		mainController.Data["BaseUrl"] = mainController.Ctx.Request.Host
 		mainController.Data["Record"] = web.AppConfig.DefaultString("record", "")
 		mainController.Data["Email"] = web.AppConfig.DefaultString("email", "")
 		mainController.Data["UserAgent"] = mainController.Ctx.Request.UserAgent()
@@ -93,7 +94,8 @@ func (mainController *MainController) GetGeo() {
 	if strings.Contains(mainController.Ctx.Request.UserAgent(), "curl") {
 		mainController.TplName = "geo.tpl"
 	} else {
-		mainController.Data["BaseUrl"] = web.AppConfig.DefaultString("baseurl", "ipcrystal.com")
+		//mainController.Data["BaseUrl"] = web.AppConfig.DefaultString("baseurl", "ipcrystal.com")
+		mainController.Data["BaseUrl"] = mainController.Ctx.Request.Host
 		mainController.Data["Email"] = web.AppConfig.DefaultString("email", "")
 		mainController.Data["UserAgent"] = mainController.Ctx.Request.UserAgent()
 
