@@ -21,4 +21,9 @@ function rmi() {
 
 IMAGE=iproute/ifconfig
 
-rmi $IMAGE "$1"
+
+if [ -z "$1" ]; then
+  rmi $IMAGE all
+else
+  rmi $IMAGE "$1"
+fi
