@@ -20,7 +20,7 @@
             padding: 0;
             font-style: normal;
             font-weight: normal;
-            font-family: "JetBrains Mono", Consolas, Arial, sans-serif;
+            font-family: Consolas, Monaco, Arial, sans-serif;
             font-size: 13px;
             color: #333;
         }
@@ -221,6 +221,7 @@
                 <td class="info_table_label">Referer</td>
                 <td>{{.Referer}}</td>
             </tr>
+            <!--
             <tr>
                 <td class="info_table_label">Connection</td>
                 <td>{{.Connection}}</td>
@@ -228,6 +229,11 @@
             <tr>
                 <td class="info_table_label">KeepAlive</td>
                 <td>{{.Keepalive}}</td>
+            </tr>
+            -->
+            <tr>
+                <td class="info_table_label">Contact</td>
+                <td colspan="2">mailto:<a href="mailto:{{.Email}}">{{.Email}}</a></td>
             </tr>
             <tr>
                 <td class="info_table_label">Method</td>
@@ -409,9 +415,10 @@
     </div>
     <div id="bottom">
     </div>
-    <div id="footer">&copy; {{.CopyrightBegin}} - {{.CopyrightEnd}} <a
-                href="https://{{.BaseUrl}}">https://{{.BaseUrl}}</a> <a
-                href="https://beian.miit.gov.cn/" target="_blank">{{ .Record }}</a></div>
+    <div id="footer">&copy; {{.CopyrightBegin}} - {{.CopyrightEnd}}
+        <a style="color: #dddddd" href="https://{{.BaseUrl}}">https://{{.BaseUrl}}</a>
+        <a style="color: #dddddd" href="https://beian.miit.gov.cn/" target="_blank">{{ .Record }}</a>
+    </div>
 </div>
 </body>
 </html>
