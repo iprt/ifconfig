@@ -24,19 +24,33 @@ func (mainController *MainController) Get() {
 		//mainController.Data["BaseUrl"] = web.AppConfig.DefaultString("baseurl", "ipcrystal.com")
 		host := mainController.Ctx.Request.Host
 
+		// 配置 BaseUrl
 		mainController.Data["BaseUrl"] = host
-		// 不同域名下的备案不同的映射
-		defaultRecord := web.AppConfig.DefaultString("record", "")
-		recordWithHost := web.AppConfig.DefaultString("record."+host, "")
-		if recordWithHost == "" || recordWithHost == "." {
-			mainController.Data["Record"] = defaultRecord
+
+		recordEnable := web.AppConfig.DefaultBool("record.enable", false)
+		if recordEnable {
+			// 不同域名下的备案不同的映射
+			defaultRecord := web.AppConfig.DefaultString("record", "")
+			recordWithHost := web.AppConfig.DefaultString("record."+host, "")
+			if recordWithHost == "" || recordWithHost == "." {
+				mainController.Data["Record"] = defaultRecord
+			} else {
+				mainController.Data["Record"] = recordWithHost
+			}
 		} else {
-			mainController.Data["Record"] = recordWithHost
+			mainController.Data["Record"] = "."
 		}
 
+		// 配置 Email
 		mainController.Data["Email"] = web.AppConfig.DefaultString("email", "")
+
+		// 配置 UserAgent
 		mainController.Data["UserAgent"] = mainController.Ctx.Request.UserAgent()
+
+		// 配置 CopyrightBegin
 		mainController.Data["CopyrightBegin"] = "2012"
+
+		// 配置 CopyrightEnd
 		mainController.Data["CopyrightEnd"] = strconv.Itoa(time.Now().Year())
 
 		names, err := net.LookupAddr(ip)
@@ -108,13 +122,19 @@ func (mainController *MainController) GetGeo() {
 		host := mainController.Ctx.Request.Host
 
 		mainController.Data["BaseUrl"] = host
-		// 不同域名下的备案不同的映射
-		defaultRecord := web.AppConfig.DefaultString("record", "")
-		recordWithHost := web.AppConfig.DefaultString("record."+host, "")
-		if recordWithHost == "" || recordWithHost == "." {
-			mainController.Data["Record"] = defaultRecord
+
+		recordEnable := web.AppConfig.DefaultBool("record.enable", false)
+		if recordEnable {
+			// 不同域名下的备案不同的映射
+			defaultRecord := web.AppConfig.DefaultString("record", "")
+			recordWithHost := web.AppConfig.DefaultString("record."+host, "")
+			if recordWithHost == "" || recordWithHost == "." {
+				mainController.Data["Record"] = defaultRecord
+			} else {
+				mainController.Data["Record"] = recordWithHost
+			}
 		} else {
-			mainController.Data["Record"] = recordWithHost
+			mainController.Data["Record"] = "."
 		}
 
 		mainController.Data["Email"] = web.AppConfig.DefaultString("email", "")
