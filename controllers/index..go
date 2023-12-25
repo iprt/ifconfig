@@ -22,8 +22,18 @@ func (mainController *MainController) Get() {
 		mainController.TplName = "iponly.tpl"
 	} else {
 		//mainController.Data["BaseUrl"] = web.AppConfig.DefaultString("baseurl", "ipcrystal.com")
-		mainController.Data["BaseUrl"] = mainController.Ctx.Request.Host
-		mainController.Data["Record"] = web.AppConfig.DefaultString("record", "")
+		host := mainController.Ctx.Request.Host
+
+		mainController.Data["BaseUrl"] = host
+		// 不同域名下的备案不同的映射
+		defaultRecord := web.AppConfig.DefaultString("record", "")
+		recordWithHost := web.AppConfig.DefaultString("record."+host, "")
+		if recordWithHost == "" {
+			mainController.Data["Record"] = defaultRecord
+		} else {
+			mainController.Data["Record"] = recordWithHost
+		}
+
 		mainController.Data["Email"] = web.AppConfig.DefaultString("email", "")
 		mainController.Data["UserAgent"] = mainController.Ctx.Request.UserAgent()
 		mainController.Data["CopyrightBegin"] = "2012"
@@ -95,7 +105,18 @@ func (mainController *MainController) GetGeo() {
 		mainController.TplName = "geo.tpl"
 	} else {
 		//mainController.Data["BaseUrl"] = web.AppConfig.DefaultString("baseurl", "ipcrystal.com")
-		mainController.Data["BaseUrl"] = mainController.Ctx.Request.Host
+		host := mainController.Ctx.Request.Host
+
+		mainController.Data["BaseUrl"] = host
+		// 不同域名下的备案不同的映射
+		defaultRecord := web.AppConfig.DefaultString("record", "")
+		recordWithHost := web.AppConfig.DefaultString("record."+host, "")
+		if recordWithHost == "" {
+			mainController.Data["Record"] = defaultRecord
+		} else {
+			mainController.Data["Record"] = recordWithHost
+		}
+
 		mainController.Data["Email"] = web.AppConfig.DefaultString("email", "")
 		mainController.Data["UserAgent"] = mainController.Ctx.Request.UserAgent()
 
