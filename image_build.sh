@@ -57,7 +57,7 @@ CON=$(docker image ls $IMAGE:$VERSION | wc -l)
 if [ "$CON" -eq 2 ]; then
   echo tag new version
   TIMESTAMP_VERSION=$(date '+%Y-%m-%d_%H-%M-%S')
-  docker tag $IMAGE:$VERSION $IMAGE:$VERSION:"$TIMESTAMP_VERSION"
+  docker tag "$IMAGE:$VERSION" "$IMAGE:$TIMESTAMP_VERSION"
 fi
 
 docker build -f Dockerfile -t iproute/ifconfig .
