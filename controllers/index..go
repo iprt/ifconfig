@@ -28,7 +28,7 @@ func (mainController *MainController) Get() {
 		// 不同域名下的备案不同的映射
 		defaultRecord := web.AppConfig.DefaultString("record", "")
 		recordWithHost := web.AppConfig.DefaultString("record."+host, "")
-		if recordWithHost == "" {
+		if recordWithHost == "" || recordWithHost == "." {
 			mainController.Data["Record"] = defaultRecord
 		} else {
 			mainController.Data["Record"] = recordWithHost
@@ -111,7 +111,7 @@ func (mainController *MainController) GetGeo() {
 		// 不同域名下的备案不同的映射
 		defaultRecord := web.AppConfig.DefaultString("record", "")
 		recordWithHost := web.AppConfig.DefaultString("record."+host, "")
-		if recordWithHost == "" {
+		if recordWithHost == "" || recordWithHost == "." {
 			mainController.Data["Record"] = defaultRecord
 		} else {
 			mainController.Data["Record"] = recordWithHost
