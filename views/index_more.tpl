@@ -87,7 +87,7 @@
         }
 
         #middle {
-            height: 10px;
+            height: 110px;
             clear: both;
             text-align: center;
             padding-top: 20px;
@@ -284,7 +284,7 @@
                 <td class="cli_command">$ curl {{.BaseUrl}}/geo</td>
                 <td class="cli_arrow">&rArr;</td>
                 <td>
-                    ip_addr: {{.IP}}<br/>
+                    {{.IP}}<br/>
                     QQWry: {{.QQWry}}<br/>
                     Geoip2: {{.Geoip2}}<br/>
                     IPIP.net: {{.IPIP}}<br/>
@@ -293,10 +293,77 @@
             </tr>
 
             <tr>
+                <td class="cli_command">$ curl {{.BaseUrl}}/host</td>
+                <td class="cli_arrow">&rArr;</td>
+                <td>{{.Host}}</td>
+            </tr>
+
+            <tr>
+                <td class="cli_command">$ curl {{.BaseUrl}}/ua</td>
+                <td class="cli_arrow">&rArr;</td>
+                <td>{{.UserAgent}}</td>
+            </tr>
+
+            <tr>
+                <td class="cli_command">$ curl {{.BaseUrl}}/port</td>
+                <td class="cli_arrow">&rArr;</td>
+                <td>{{.Port}}</td>
+            </tr>
+
+            <tr>
+                <td class="cli_command">$ curl {{.BaseUrl}}/lang</td>
+                <td class="cli_arrow">&rArr;</td>
+                <td>{{.Lang}}</td>
+            </tr>
+
+            <tr>
+                <td class="cli_command">$ curl {{.BaseUrl}}/keepalive</td>
+                <td class="cli_arrow">&rArr;</td>
+                <td>{{.Keepalive}}</td>
+            </tr>
+
+            <tr>
+                <td class="cli_command">$ curl {{.BaseUrl}}/connection</td>
+                <td class="cli_arrow">&rArr;</td>
+                <td>{{.Connection}}</td>
+            </tr>
+
+            <tr>
+                <td class="cli_command">$ curl {{.BaseUrl}}/encoding</td>
+                <td class="cli_arrow">&rArr;</td>
+                <td>{{.Encoding}}</td>
+            </tr>
+
+            <tr>
+                <td class="cli_command">$ curl {{.BaseUrl}}/mime</td>
+                <td class="cli_arrow">&rArr;</td>
+                <td>{{.Mime}}</td>
+            </tr>
+
+            <tr>
+                <td class="cli_command">$ curl {{.BaseUrl}}/charset</td>
+                <td class="cli_arrow">&rArr;</td>
+                <td>{{.Charset}}</td>
+            </tr>
+            <tr>
+                <td class="cli_command">$ curl {{.BaseUrl}}/via</td>
+                <td class="cli_arrow">&rArr;</td>
+                <td>{{.Via}}</td>
+            </tr>
+            <tr>
+                <td class="cli_command">$ curl {{.BaseUrl}}/forwarded</td>
+                <td class="cli_arrow">&rArr;</td>
+                <td>{{.Forwarded}}</td>
+            </tr>
+            <tr>
                 <td class="cli_command">$ curl {{.BaseUrl}}/all</td>
                 <td class="cli_arrow">&rArr;</td>
                 <td>
                     ip_addr: {{.IP}}<br/>
+                    remote_host: {{.Host}} <br/>
+                    user_agent: {{.UserAgent}}<br/>
+                    port: {{.Port}}<br/>
+                    lang: {{.Lang}}<br/>
                     connection: {{.Connection}}<br/>
                     keep_alive: {{.Keepalive}}<br/>
                     encoding: {{.Encoding}}<br/>
