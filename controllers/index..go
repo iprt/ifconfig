@@ -51,6 +51,39 @@ func (mainController *MainController) fillGeoData() {
 	mainController.Data["IP2Region"], _ = mainController.QueryIP2Region(ip)
 }
 
+// fillIndexData populates the data for the index page.
+//
+// It retrieves the IP address from the request, and if no "ip" parameter is provided,
+// it uses the client's IP address. Then, it sets the "BaseUrl" value to the hostname of the request.
+//
+// If the "record.enable" configuration is set to true, it retrieves the default record or the record
+// associated with the current host, and sets it in the "Record" field of the data. Otherwise, it sets
+// the "Record" field to ".".
+//
+// The "Email" field is set to the configured email address.
+// The "UserAgent" field is set to the user agent of the request.
+// The "CopyrightBegin" field is set to "2012".
+// The "CopyrightEnd" field is set to the current year.
+//
+// It performs a reverse DNS lookup with the retrieved IP address, and sets the "Host" field with the
+// result if the lookup is successful.
+//
+// It queries various IP geolocation providers (Geoip2, IPIPFree, QQWry, IP2Region) with the IP address,
+// and sets the respective fields in the data with the results.
+//
+// It retrieves the remote address and extracts the port number, setting it in the "Port" field.
+//
+// It sets the "Method" field with the request method.
+// It sets the "Encoding" field with the first value of the "Accept-Encoding" header, if present.
+// It sets the "Mime" field with the first value of the "Accept" header, if present.
+// It sets the "Connection" field with the first value of the "Connection" header, if present.
+// It sets the "Via" field with the first value of the "Via" header, if present.
+// It sets the "Charset" field with the first value of the "Charset" header, if present.
+// It sets the "Keepalive" field with the first value of the "KeepAlive" header, if present.
+// It sets the "Forwarded" field with the first value of the "X-Forwarded-For" header, if present.
+// It sets the "Lang" field with the first value of the "Accept-Language" header, if present.
+//
+// Finally, it sets the "Referer" field with the referrer URL from the request.
 func (mainController *MainController) fillIndexData() {
 	ip := mainController.GetString("ip", mainController.Ctx.Input.IP())
 	//mainController.Data["BaseUrl"] = web.AppConfig.DefaultString("baseurl", "ipcrystal.com")
