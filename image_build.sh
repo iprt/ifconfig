@@ -61,3 +61,5 @@ if [ "$CON" -eq 2 ]; then
 fi
 
 docker build -f Dockerfile -t iproute/ifconfig .
+
+echo "build ifconfig end ..."
