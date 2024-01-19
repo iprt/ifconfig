@@ -25,19 +25,6 @@ bash image_push.sh <REGISTRY> [IMAGE] [VERSION]
 - IMAGE：可选，默认镜像的名称 `iproute/ifconfig`
 - VERSION: 可选, 默认镜像版本 `latest`
 
-### delete image
-
-```shell
-# 保留latest,删除其他所有
-bash image_remove.sh
-
-# 删除所有版本
-bash image_remove.sh all
-
-# 删除<none>的镜像版本
-bash image_remove.sh none
-```
-
 ## ip database
 
 GeoLite2-City.mmdb
