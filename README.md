@@ -8,27 +8,6 @@ https://nginx.co
 
 https://kubectl.net
 
-## image
-
-### build image
-
-```shell
-bash image_build.sh [IMAGE] [VERSION]
-```
-
-- IMAGE：可选，默认镜像的名称 `iproute/ifconfig`
-- VERSION: 可选, 默认镜像版本
-
-### push image
-
-```shell
-bash image_push.sh <REGISTRY> [IMAGE] [VERSION]
-```
-
-- REGISTRY: 必选，镜像仓库，一般是私仓
-- IMAGE：可选，默认镜像的名称 `iproute/ifconfig`
-- VERSION: 可选, 默认镜像版本 `latest`
-
 ## ip database
 
 GeoLite2-City.mmdb
