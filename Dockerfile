@@ -13,4 +13,4 @@ ADD views/ views/
 
 EXPOSE 8080
 
-CMD ["./ifconfig"]
+ENTRYPOINT ["./ifconfig"]
