@@ -4,6 +4,10 @@
 
 https://ipcrystal.com
 
+https://nginx.co
+
+https://kubectl.net
+
 ## image
 
 ### build image
