@@ -293,20 +293,6 @@
             </tr>
 
             <tr>
-                <td class="cli_command">$ curl {{.BaseUrl}}/all</td>
-                <td class="cli_arrow">&rArr;</td>
-                <td>
-                    ip_addr: {{.IP}}<br/>
-                    connection: {{.Connection}}<br/>
-                    keep_alive: {{.Keepalive}}<br/>
-                    encoding: {{.Encoding}}<br/>
-                    mime: {{.Mime}}<br/>
-                    charset: {{.Charset}}<br/>
-                    via: {{.Via}}<br/>
-                    forwarded: {{.Forwarded}}<br/>
-                </td>
-            </tr>
-            <tr>
                 <td class="cli_command">$ curl {{.BaseUrl}}/all.xml</td>
                 <td class="cli_arrow">&rArr;</td>
                 <td>&lt;info&gt;<br/>
